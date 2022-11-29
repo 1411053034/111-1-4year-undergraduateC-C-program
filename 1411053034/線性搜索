@@ -1,0 +1,73 @@
+#include <stdio.h>
+#define 大小 10
+void sort(int a[], int c[]);
+int search(int id[], int sc[], int ID);
+int 主要（無效）
+{
+	int a[SIZE] = { 2,6,4,8,10,12,89,68,45,37 };
+	int c[SIZE] = { 66,67,66,70,73,74,75,75,62,34 }, ID;
+
+	printf("原始順序的數據項\n");
+	printf("學號");
+	對於 (int i = 0; i < SIZE; i++) {
+		printf("%4d", a[i]);
+	}
+	放（“”）;
+	printf("成績");
+	對於 (int i = 0; i < SIZE; i++) {
+		printf("%4d", c[i]);
+	}
+	放（“”）;
+	放（“”）;
+	//排序（a，c）；
+
+	printf("數據項按升序排列\n");
+	printf("學號");
+	對於 (int i = 0; i < SIZE; i++) {
+		printf("%4d", a[i]);
+	}
+	放（“”）;
+	printf("成績");
+	對於 (int i = 0; i < SIZE; i++) {
+		printf("%4d", c[i]);
+	}
+	放（“”）;
+	放（“”）;
+	puts("輸入想查詢的學號");
+	scanf_s("%d", &ID);
+
+	int j=搜索（a，c，ID）；
+	如果（j < 0）{
+		printf("找不到學生 %d", ID);
+		返回 0；
+	}
+	別的
+		printf("學生 %d 得到 %d", ID, c[j]);
+
+
+
+
+
+}
+/*void sort(int a[], int c[]) {
+	保持;
+	for (int pass = 1; pass < SIZE; pass++) {
+		for (int i = 0; i < SIZE - pass; i++) {
+			如果 (c[i] > c[i + 1]) {
+				保持=c[i]；
+				c[i] = c[i + 1];
+				c[i + 1] = 保持；
+				保持=一個[我]；
+				a[i] = a[i + 1];
+				a[i + 1] = 保持；
+			}
+		}
+	}
+}
+*/
+int search(int id[], int sc[], int stu) {
+	詮釋我;
+	對於 (i = 0; i < SIZE; i++)
+		如果 (id[i] == stu) 返回 i;
+	返回-1；
+}
