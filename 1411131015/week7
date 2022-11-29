@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int n1;
+int main( void )
+{
+      
+   printf("Enter a number\n" );
+   scanf("%d",&n1);
+   printf( "the results: " );
+
+
+
+int faibonacci(n1){
+
+   if(0==n1||1==n1){
+   	return n1;
+   }
+      
+   else{
+   	return fibonacci(n1-1)+fibonacci(n1-2);
+   	}
+   }
+ }
+ 
+ 
+ ans
+ #include<stdio.h>
+
+int fac(int);
+int i = 0;
+
+int main() {
+    //Q1.
+    int n;
+    scanf("%d", &n);
+    for ( i = 0; i <= n; i++) {
+        printf("%d ", fac(i));
+    }
+    printf("\n");
+    printf("%d\n", fac(n));
+
+    //迭代方式
+    
+    printf("Q2\n");
+    scanf("%d", &n);
+    int n1 = 0, n2 = 1, asw;
+
+    if (n <= 1)printf("%d ", n);
+
+    else
+    {
+        for ( i = 2; i <= n; i++) {
+            asw = n1 + n2;
+            n1 = n2;
+            n2 = asw;
+        }
+        printf("%d ", asw);
+    }
+}
+
+//遞迴方式
+int fac(int n) {
+    if (n <= 1) return n;
+
+    else return fac(n - 1) + fac(n - 2);
+}
+

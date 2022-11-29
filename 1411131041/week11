@@ -1,0 +1,75 @@
+#include <stdio.h>
+#define SIZE 10
+int a[SIZE] =    { 2,6,4,8,10,12,89,68,45,37 }, ID, i, j = 0;
+int c[SIZE] = { 66,67,66,70,73,74,75,75,62,32 };
+void sort(int a[SIZE], int c[SIZE]);
+int serch(int a[], int);
+int main(void) {
+
+	puts("Data items in originall order");
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		printf("%4d", a[i]);
+		printf("%4d\n", c[i]);
+	}
+
+	sort(a, c);
+	puts("\nData items in ascending order");
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		printf("%4d", a[i]);
+		printf("%4d\n", c[i]);
+
+	}
+
+	printf("Input student ID: ");
+	scanf_s("%d", &ID);
+
+	j = serch(a, ID);
+	if (j >= 9) printf("student %d not found!", ID);
+	else printf("Student %d got %d!", a[j], c[j]);
+
+
+
+
+
+	puts("");
+
+}
+void sort(int a[], int c[])
+{
+	for (int pass = 1; pass < SIZE; pass++)
+	{
+		for (size_t i = 0; i < SIZE - 1; i++)
+		{
+			if (c[i] > c[i + 1])
+			{
+				int scorea = c[i];
+				int ida = a[i];
+				a[i] = a[i + 1];
+				a[i + 1] = ida;
+				c[i] = c[i + 1];
+				c[i + 1] = scorea;
+			}
+		}
+	}
+
+}
+
+
+int serch(int a[], int id) {
+
+	for (i = 0; i < SIZE; i++)
+	{
+		if (id == a[i])
+		{
+			return i;
+		}
+		else
+		{
+			i++;
+		}
+
+	}
+	return i;
+}

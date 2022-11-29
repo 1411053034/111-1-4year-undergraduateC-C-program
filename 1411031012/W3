@@ -1,0 +1,143 @@
+//if else迴圈 (P87)
+
+#include <stdio.h>
+
+int main()
+{
+    int a1, a2;
+    float div;
+    printf("Enter first integer\n");
+    scanf_s("%d", &a1);
+
+    printf("Enter second integer\n");
+    scanf_s("%d", &a2);
+
+    if (a1 != a2) {
+        if (a1 > a2) {
+            printf("%d > %d", a1, a2);
+        }
+        else
+            printf("%d < %d", a1, a2);
+    }
+    else
+        printf("%d = %d", a1, a2);
+
+    return 0;
+}
+-----------------
+//P108
+#include <stdio.h>
+
+int main()
+{
+    int grade;
+    
+    printf("Enter your grade\n");
+    scanf_s("%d", &grade);
+
+
+ if (grade >= 90) 
+        puts("A");
+    
+    else {
+        if (grade >= 80) 
+            puts("B");
+        
+        else {
+            if (grade >= 70) 
+                puts("C");
+            
+            else {
+                if (grade >= 60) 
+                    puts("D");
+                
+                else 
+                    puts("F");
+                
+            }
+        }
+    }
+
+    return 0;
+}
+--------------------------
+//2.19 (P97)
+#include <stdio.h>
+
+int main()
+{
+    int a1, a2, a3, sum, average, product, smallest,max;
+    printf("Enter three different integers:");
+    scanf_s("%d %d %d", &a1, &a2, &a3);
+
+    sum = a1 + a2 + a3;
+    average = (a1 + a2 + a3) / 3;
+    product= a1 * a2 * a3;
+    
+    if (a1 >= a2) {
+        if (a1 >= a3)
+            max = a1;
+        else
+            max = a3;
+    }
+    else if (a3 > a2)
+        max = a3;
+    else
+        max = a2;
+
+
+    if (a1 <= a2) {
+        if (a1 <= a3)
+            smallest = a1;
+        else
+            smallest = a3;
+    }
+    else if (a3 < a2)
+        smallest = a3;
+    else
+        smallest = a2;
+
+    printf("sum is %d\n", sum);
+    printf("Average is %d\n", average);
+    printf("product is %d\n", product);
+    printf("Lagest is %d\n", max);
+    printf("smallest is %d\n", smallest);
+    return 0;
+}
+------------
+//同上 交換法 寫到一半
+#include <stdio.h>
+
+int main()
+{
+    int a1, a2, a3, sum, average, product, smallest,max,t;
+    printf("Enter three different integers:");
+    scanf_s("%d %d %d", &a1, &a2, &a3);
+
+    sum = a1 + a2 + a3;
+    average = (a1 + a2 + a3) / 3;
+    product= a1 * a2 * a3;
+    
+    if (a2 < a3) {// 2 3交換
+        t = a2;
+        a2 = a3;
+        a3 = t;
+    }
+    if (a1 > a3) {// 2 3交換
+        t = a2;
+        a2 = a3;
+        a3 = t;
+    }
+
+    思路
+    1 5 10
+    1 10 5 //2 3交換
+    10 1 5 //1 2交換
+    10 5 1 //2 3交換
+    printf("sum is %d\n", sum);
+    printf("Average is %d\n", average);
+    printf("product is %d\n", product);
+    printf("Lagest is %d\n", max);
+    printf("smallest is %d\n", smallest);
+    return 0;
+}

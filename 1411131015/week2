@@ -1,0 +1,86 @@
+//巢狀
+#include <stdio.h>
+// function main begins program execution
+int main( void )
+{
+   printf( "Enter a grade, and I will tell you\n" );
+   printf( "the results: " );
+
+   int num1; // user's grade
+
+   scanf( "%d", &num1); // read two integers
+                        //如果if括弧內的結果為false  ,就跳過if的大括弧內的內容 
+   if ( num1 >=90 ) {   //如果if括弧內的結果為true  ,就會執行if的大括弧內的內容
+    puts("A");
+   }                                  
+   else {  
+      if (num1 >=80  ) {
+         puts("B");
+      } // end if
+	    else { 
+	       if (num1 >=70  ) {
+            puts("C");
+         } // end if
+         else {
+		        if (num1 >=60  ) {
+               puts("D");
+            } // end if
+            else {
+                 puts("F");
+           } // end if
+        } // end if
+     } // end if
+   } // end if
+return 0;
+} // end function main
+
+上周未完成(10/5完成)
+#include <stdio.h>
+
+// function main begins program execution
+int main( void )
+{
+   int a,b,c,largest,smallest,sum,average,product;
+   
+   printf( "Enter the three number(a,b,c), and I will tell you\n" );
+   printf( "the largest,smallest,sum,average,product: " );
+
+
+   scanf( "%d" "%d" "%d", &a,&b,&c); 
+                        
+   if ( a >= b ) { //a>b
+    if(a >= c) {//a>b,a>c
+    puts("largest=a");
+    
+	  if(b>c) { 
+	  	puts("smallest=c");
+	  }
+	  else {
+	  	puts("smallest=b");
+	  }
+	   }  
+    else {  //a>b,a<c c is largest
+	 puts("largest=c"); 
+	 puts("smallest=b");}
+   }                                  
+   else {  //a<b
+     if(b>c) { //a<b b>c
+     	puts("largest=b");
+     	puts("smallest=a");
+	 }
+	 else{ //a<b b<c
+	 	puts("largest=c");
+	 	puts("smallest=a");
+	 }
+	}
+	sum=a+b+c;
+	average=(a+b+c)/3;
+	product=a*b*c;
+	
+    printf("sum is %d\n",sum);
+    printf("average is %d\n",average);
+    printf("product is %d\n",product);
+     
+     
+     
+           } // end if

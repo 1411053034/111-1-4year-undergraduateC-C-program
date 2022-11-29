@@ -1,0 +1,71 @@
+
+#include <stdio.h>
+
+int main(void)
+{
+  
+    {
+        // initialize variables in definitions 
+        unsigned int passes = 0; // number of passes   
+        unsigned int failures = 0; // number of failures 
+        unsigned int student = 1; // student counter    
+        int result{}; // one exam result 
+
+        // process 10 students using counter-controlled loop 
+        while (result != -1) {
+
+            // prompt user for input and obtain value from user 
+            printf("Enter result ( 1=pass,2=fail,-1=abort ): ");
+            scanf_s("%d", &result);
+
+            // if result 1, increment passes 
+            if (result == 1) 
+                passes++;
+             // end if 
+            else // otherwise, increment failures 
+                failures++;
+             // end else 
+
+            student = student + 1; // increment student counter  
+        } // end while 
+
+        // termination phase; display number of passes and failures 
+        printf("Passed %u\n", passes);
+        printf("Failed %u\n", failures);
+        printf("Pass Percentage : %.2f", (float)passes / student);
+
+        // if more than eight students passed, print "Bonus to instructor!" 
+        if ((float)passes/student > 0.8) {
+            puts("Bonus to instructor!");
+        } // end if 
+    } // end function main 
+}
+
+4.6
+#include <stdio.h>
+#include<math.h>
+int main(void)
+{
+    double principal = 1000.0; // starting principal
+    double rate = .05; // annual interest rate
+    double period{};
+    printf("輸入第一年本金:");
+    scanf_s("%lf", &principal);
+    printf("輸入定存利率(%%):");
+    scanf_s("%lf",&rate);
+    printf("輸入定存多久(年)");
+    scanf_s("%lf",& period);
+    // output table column heads
+    printf("Year","Amount on deposit");
+
+    // calculate amount on deposit for each of ten years
+    for (unsigned int year = 1; year <=10; ++year) {
+
+        // calculate new amount for specified year
+        double amount = principal * pow(1.0 + rate, year);
+
+        // output one table row
+        printf("%4u%21.2f\n", year, amount);
+    }
+    
+}
