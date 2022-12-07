@@ -36,12 +36,6 @@ int main(void)
 	for (i = 0; i < SIZE; i++) {
 		printf("%4d", a[1][i]);
 	}
-	puts("");
-	puts("");
-	puts("輸入欲查詢的成績");
-	scanf_s("%d", &key);
-
-
 }
 
 void sort(int a[][SIZE],int size) {
