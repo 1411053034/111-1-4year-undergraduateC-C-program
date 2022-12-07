@@ -1,0 +1,63 @@
+#include <stdio.h>
+#define SIZE 20
+void sort(int a[][SIZE],int size);
+void swap(int*e1ptr, int*e2ptr);
+
+
+//int search(int id[], int sc[], int ID);
+
+int main(void)
+{
+	int i, key;
+	int a[2][SIZE] = { { 2,6,4,8,15,16,17,19,21,23,24,26,27,28,29,31,32,33,36,37 },
+	                { 60,67,46,70,73,74,75,75,62,32,44,45,27,12,80,63,68,90,11,66 } }, ID;
+
+	printf("Data items in original order\n");
+	printf(" 學 號");
+	for (i = 0; i < SIZE; i++) {
+		printf("%4d", a[0][i]);
+	}
+	puts("");
+	printf(" 成 績");
+	for (int i = 0; i < SIZE; i++) {
+		printf("%4d", a[1][i]);
+	}
+	puts("");
+	puts("");
+	sort(a,SIZE);
+
+	printf("Data items in ascending order\n");
+	printf(" 學 號");
+	for (i = 0; i < SIZE; i++) {
+		printf("%4d", a[0][i]);
+	}
+	puts("");
+	printf(" 成 績");
+	for (i = 0; i < SIZE; i++) {
+		printf("%4d", a[1][i]);
+	}
+	puts("");
+	puts("");
+	puts("輸入欲查詢的成績");
+	scanf_s("%d", &key);
+
+
+}
+
+void sort(int a[][SIZE],int size) {
+	int hold;
+	for (int pass = 1; pass < SIZE; pass++) {
+		for (int i = 0; i < SIZE - pass; i++) {
+			if (a[1][i] > a[1][i + 1]) {
+			swap(&a[1][i], &a[1][i + 1]);
+			swap(&a[0][i], &a[0][i + 1]);
+			}
+		}
+	}
+}
+void swap(int*e1ptr,int*e2ptr)
+{
+	int hold = *e1ptr;
+    *e1ptr = *e2ptr;
+    *e2ptr = hold;
+	}
