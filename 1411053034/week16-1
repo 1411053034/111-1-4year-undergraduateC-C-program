@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char N1[] = "huUINI2iuvub";
+    char N2[] = "huUINI2iuvub";
+
+    int i = 0, cnta = 0, cntA = 0, cnt1 = 0;
+    while (N2[i] != '\0') {
+        if (islower(N2[i])) {
+            cnta += 1;
+            N1[i] = toupper(N2[i]);
+        }
+
+        if (isupper(N2[i])) {
+            cntA += 1;
+            N1[i] = tolower(N2[i]);
+        }
+
+        if (isdigit(N2[i])) {
+            cnt1 += 1;
+            N1[i] = N2[i];
+        }
+        i++;
+    }
+    printf("小寫 %d 個，大寫 %d 個，數字 %d 個\n", cnta, cntA, cnt1);
+    printf("原本：%s，大小寫互換後 : %s", N2, N1);
+}
+//題目:給定一個字串，先計算且印出字串中的大、小寫與數字的數量，之後將字串中的大、小寫互換之後，再將互換後的字串印出。
