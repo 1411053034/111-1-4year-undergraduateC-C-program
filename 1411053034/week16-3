@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+int main()
+{
+	char s1[] = "abc2.3456ababc38.777gh4.42xyz";
+	char* s1Ptr = &s1[0];
+	while (*s1Ptr != '\0') {
+		if (!isdigit(*s1Ptr)) {
+			s1Ptr++;
+		}
+		else {
+			double d = strtod(s1Ptr, &s1Ptr);
+			printf(" % .4f\n", d);
+		}
+	}
+}
+//題目:寫一個程式，能將字串中一個或多個浮點數取出，並且分別印出。Hint: strtod()、strncat()
